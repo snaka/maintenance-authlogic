@@ -1,0 +1,3 @@
+[submodule "authlogic"]
+	path = authlogic
+	url = git@github.com:snaka/authlogic.git
