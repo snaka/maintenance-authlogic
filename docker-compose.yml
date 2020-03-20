@@ -8,6 +8,8 @@ services:
       - mysql:/var/lib/mysql
   gem:
     build: .
+    environment:
+      MYSQL_ROOT_PASSWORD: *dbpassword
     volumes:
       - .:/work
       - bundle_install:/usr/local/bundle
