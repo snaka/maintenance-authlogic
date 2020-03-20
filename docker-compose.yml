@@ -1,5 +1,11 @@
 version: '3'
 services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: &dbpassword mydbpassword
+    volumes:
+      - mysql:/var/lib/mysql
   gem:
     build: .
     volumes:
@@ -9,6 +15,11 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+    depends_on:
+      - db
+
 volumes:
+  mysql:
+    driver: local
   bundle_install:
     driver: local
