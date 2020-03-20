@@ -4,7 +4,8 @@ RUN apt-get update -qq && \
     apt-get install -y \
       build-essential \
       libpq-dev \
-      libsqlite3-dev
+      libsqlite3-dev \
+      nodejs
 
 RUN mkdir /work
 WORKDIR /work
