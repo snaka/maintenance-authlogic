@@ -6,6 +6,8 @@ services:
       MYSQL_ROOT_PASSWORD: &dbpassword mydbpassword
     volumes:
       - mysql:/var/lib/mysql
+    ports:
+      - "3360:3360"
   gem:
     build: .
     environment:
